@@ -1,5 +1,5 @@
 # Hate_seepch_project
-The goal of this project to is extract different features from a a tsv file that contains tweets and their label, which will be saved to a csv file. MI and logic regression and then run on the csv file to get the relevant scores. The clustering files are used to produce a cluster file that contains certain word for use in feature.extraction.py 
+The goal of this project to is extract different features from a a tsv file that contains tweets and their label, which will be saved to a csv file. MI and logic regression will be run on the csv file to get the relevant scores. The clustering files are used to produce a cluster file that contains certain words for use in feature.extraction.py 
 
 Please downlaod the Chinese w2v corpus in here: https://ai.tencent.com/ailab/nlp/en/embedding.html
 
@@ -28,14 +28,14 @@ If you have not run the clustering.py, please use the pre-produced cluster files
 `python3 create_combined_cluster_file.py --cluster_files clusters_sample/cluster0.txt clusters_sample/cluster3.txt clusters_sample/cluster4.txt clusters_sample/cluster7.txt`
 
 # feature_extraction.py
-reads a tsv file and a cluster file to create a csv file called toyset.csv for feature testing 
+reads a tsv file and a combined clustered file to create a csv file called toyset.csv for feature testing 
 
 Example usage: 
-If you have run the cluster.py and create_combined_cluster_file (which creates the combined_cluster.txt)
-`python3 feature_extraction.py –tsv_file toy.tsv –w2v_file Tencent_AILab_ChineseEmbedding.txt --clustered_word_file combined_cluster.txt` 
+If you have run the cluster.py and create_combined_cluster_file.py (which creates the combined_cluster.txt)
+`python3 feature_extraction.py --tsv_file toy.tsv --w2v_file Tencent_AILab_ChineseEmbedding.txt --clustered_word_file combined_cluster.txt` 
 
 if you have not run clustering.py and create_combined_cluster.py, please used the pre-produced files in the clusters_sample folder
-`Python3 feature_extraction.py –tsv_file toy.tsv –w2v_file Tencent_AILab_ChineseEmbedding.txt –clustered_word_file clusters_sample/combined_cluster.txt`
+`Python3 feature_extraction.py --tsv_file toy.tsv --w2v_file Tencent_AILab_ChineseEmbedding.txt --clustered_word_file clusters_sample/combined_cluster.txt`
 
 # feature_testing.py
 reads a csv file created from feature_extraction.py to get the mutual information and logistic regression scores
