@@ -123,7 +123,6 @@ def profanity_proximity(sentence):
     #print(words)
     window=5
 
-    #todo: proved
     for x, y in enumerate(words):
         print(f'the y of words: {y}')
         print(y)
@@ -186,6 +185,7 @@ def othering_langauge(sentence):
             out_num += 1
     return out_num/sent_len
 
+
 def main(tsv_file,w2v_file,clustered_word_file):
     model = KeyedVectors.load_word2vec_format(w2v_file, binary=False)
 
@@ -207,8 +207,6 @@ def main(tsv_file,w2v_file,clustered_word_file):
 
     #returns a list of words from a cluster file
     clustered_words = []
-    #todo should add that if you dont wish run the clusters - please changed the --clustered_word_file argument with
-    #todo clusters_sample/combined_clusted.txt
     with open(clustered_word_file, 'r') as file:
         for line in file:
             word = line.strip()
@@ -264,6 +262,3 @@ if __name__ == '__main__':
     args = parser.parse_args()
 
     main(args.tsv_file,args.w2v_file,args.clustered_word_file)
-
-#sample usage
-#python3 feature_extraction.py --tsv_file toy.tsv --w2v_file Tencent_AILab_ChineseEmbedding.txt

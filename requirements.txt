@@ -1,8 +1,7 @@
 jieba
 chinese_converter
 synonyms
-jieba.posseg
-csv
-matplotlib.pyplot
+matplotlib
 pandas
 spacy
+gensim
