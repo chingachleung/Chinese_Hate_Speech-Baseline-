@@ -16,14 +16,14 @@ a folder that contains pre-produced cluster files
 reads a tsv file and uses a pretrained w2v model to create 7 files of cluster words. An elbow graph is created as well to pre determine the suitable number of clusters. 
 
 Example usage:
-`python3 clustering.py --tsv_file toy_tsv --w2v_file Tencent_AILab_ChineseEmbedding.txt`
+`python3 clustering.py --tsv_file toy.tsv --w2v_file Tencent_AILab_ChineseEmbedding.txt`
 
 # create_combined_cluster_file.py
 reads the relevant cluster files <default to be cluster0,3,4 and 7> to combine all words from the files into one single file called combined_cluster.txt
 
 Example usage:
 If you have already run the clustering.py and created cluster files:
-`python3 create_combined_cluster_file.py –cluster_files cluster0.txt cluster3.txt cluster4.txt cluster7.txt`
+`python3 create_combined_cluster_file.py --cluster_files cluster0.txt cluster3.txt cluster4.txt cluster7.txt`
 If you have not run the clustering.py, please use the pre-produced cluster files in the clusters_sample folder:
 `python3 create_combined_cluster_file.py --cluster_files clusters_sample/cluster0.txt clusters_sample/cluster3.txt clusters_sample/cluster4.txt clusters_sample/cluster7.txt`
 
