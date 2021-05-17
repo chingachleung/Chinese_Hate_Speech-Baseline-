@@ -2,6 +2,7 @@
 The goal of this project to is extract different features from a a tsv file that contains tweets and their label, which will be saved to a csv file. MI and logic regression will be run on the csv file to get the relevant scores. The clustering files are used to produce a cluster file that contains certain words for use in feature.extraction.py 
 
 Please downlaod the Chinese w2v corpus in here: https://ai.tencent.com/ailab/nlp/en/embedding.html
+Please also feel free to use other smaller Chinese embedding corpora since loading this corpus takes quite a while.
 
 # util.py 
 contains 5 functions which will be used in other files
