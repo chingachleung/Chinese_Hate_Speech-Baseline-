@@ -23,7 +23,7 @@ reads the relevant cluster files <default to be cluster0,3,4 and 7> to combine a
 
 Example usage:
 If you have already run the clustering.py and created cluster files:
-`python3 create_combined_cluster_file.py –cluster_files cluster0.txt cluster3.txt cluster4.txt cluster7.txt`
+`python3 create_combined_cluster_file.py --cluster_files cluster0.txt cluster3.txt cluster4.txt cluster7.txt`
 If you have not run the clustering.py, please use the pre-produced cluster files in the clusters_sample folder:
 `python3 create_combined_cluster_file.py --cluster_files clusters_sample/cluster0.txt clusters_sample/cluster3.txt clusters_sample/cluster4.txt clusters_sample/cluster7.txt`
 
