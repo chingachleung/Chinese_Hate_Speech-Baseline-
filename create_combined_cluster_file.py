@@ -7,7 +7,7 @@ def combine_clusters(list_of_cluster_files):
     :return combined_cluster.txt: a text file with all the words from the clusters
 
     """
-    with open('combined_cluster_toy.txt', 'w') as file:
+    with open('combined_cluster.txt', 'w') as file:
         for cluster in list_of_cluster_files:
             with open(cluster, 'r', encoding='utf-8') as cf:
                 for line in cf:
