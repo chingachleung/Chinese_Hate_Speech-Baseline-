@@ -1,0 +1,8 @@
+jieba
+chinese_converter
+synonyms
+jieba.posseg
+csv
+matplotlib.pyplot
+pandas
+spacy
