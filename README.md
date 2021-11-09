@@ -1,9 +1,19 @@
-# Hate_seepch_project
-The goal of this project to is extract different features from a a tsv file that contains tweets and their label, which will be saved to a csv file. MI and logic regression will be run on the csv file to get the relevant scores. The clustering files are used to produce a cluster file that contains certain words for use in feature.extraction.py 
+# Chinese Hate Speech Feature Selection
+
+This aims to explore potential features of hate speech in Chinese (simplified, traditional) and Cantonese that could be useful for future classification models. I scrapped relevant Tweets using a keyword approach as my dataset. A total of 10 features were extracted from the Tweets, and they fall into the following 4 categories: 
+
+1. Semantic Features 
+2. Sentiments 
+3. Lexcal Features 
+4. Linguistics Features 
+
+For details of the features please see section [Feature Selection](#feature-selection)
+
 
 Please downlaod the Chinese w2v corpus in here: https://ai.tencent.com/ailab/nlp/en/embedding.html
 Please also feel free to use other smaller Chinese embedding corpora since loading this corpus takes quite a while.
 
+# Feature Selection
 # util.py 
 contains 5 functions which will be used in other files
 
