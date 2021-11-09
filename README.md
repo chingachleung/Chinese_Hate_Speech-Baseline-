@@ -9,7 +9,7 @@ This aims to explore potential features of hate speech in Chinese (simplified, t
 
 For details of the features please see section [Feature Extraction](#feature-extraction)
 
-I use Mutual Information and Logistic Regression to determine the relevance or the predictability or the features extracted. Results show that semantic familarity and profanity words are the most powerful features to predict hate speech. See [Feature Selection](#feature_selection) for details of the results.
+I use Mutual Information determine which features are associated to hate speech, and use Logistic Regression to determine the predictability of the features extracted. See [Feature Selection](#feature_selection) for details of the results.
 
 
 Please downlaod the Chinese w2v corpus in here: https://ai.tencent.com/ailab/nlp/en/embedding.html
@@ -17,16 +17,32 @@ Please downlaod the Chinese w2v corpus in here: https://ai.tencent.com/ailab/nlp
 I used a keyword approachto scrap potentially hate speech Tweets in Simplified Chinese, Traditional Chinese or Cantonese. See [here](https://github.com/chingachleung/Chinese_Hate_seepch/blob/main/keywords.txt) for the list of keywords used. In total, I collected over 6000 Tweets. Around 25% percent of the Tweets are classifified as hate-speech, and 75% classified as non hate-speech. Please contact me for the corpus.
 
 # Feature Extraction
-reads a tsv file and a combined clustered file to create a csv file called toyset.csv for feature testing. It extracts 10 features from each Tweets into a CSV file.
+
+The following features are extracted from each Tweet:
+1. Similarity 
+2. OOV counts
+3. Punctuations 
+4. Sentence length
+5. Sentence final particles
+6. Profanity count
+7. Sentiment 
+8. Othering language
+9. Assertiveness
+10. Profanity proximity
+ 
+feature_extraction.py reads a tsv file and a combined clustered file to create a csv file called toyset.csv for feature testing.
 
 Example usage: 
 You need to run the cluster.py and create_combined_cluster_file.py as part of pre-processing first.
 `python3 feature_extraction.py --tsv_file toy.tsv --w2v_file Tencent_AILab_ChineseEmbedding.txt --clustered_word_file combined_cluster.txt` 
-# Feature Selection
-reads a csv file created from feature_extraction.py to get the mutual information and logistic regression scores
 
+# Feature Selection
+The similarity and the profanity features score the highest in Mutual Information. The logistic regression trained on all the features yield a precision score of 0.569, recall score of 0.135 and F1 score of 0.219.
+
+feature_testing.py reads a csv file created from feature_extraction.py to get the mutual information and logistic regression scores.
 Example usage:
 `python3 feature_testing.py --csv_file toyset.csv`
+
 # Utility Files 
 1. util.py
 2. toy.tsv
