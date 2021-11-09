@@ -7,7 +7,6 @@ import jieba
 import jieba.posseg as pseg
 import csv
 
-#global variables
 keywords = read_keywords()
 profane_words = read_profanity()
 
@@ -17,8 +16,6 @@ def determine_similarity(cluster, seg_tweet):
     :param seg_tweet: segmented tweet
     :return normalized number of similar words to the words in the cluster
     """
-    # similarity score threshold = 0.5
-    # todo : proved in k-means
     num = 0
     length = len(seg_tweet)
     #print(length)
@@ -36,8 +33,6 @@ def out_of_vocab(segmented_tweet, model):
     calculates the number of oov words in a tweet, normalized by number of total words
     :param segmented_tweet: a list of words in a tweet
     """
-    #todo: should be loaded in main
-    #todo: proved
     sent_len = len(segmented_tweet)
     num = 0
     for word in segmented_tweet:
@@ -69,7 +64,6 @@ def sentence_length(sentence):
     :param tweet: unprocessed
     :return sent_len: number of chinese characters
     """
-    #todo:proved
     #define sentence length by the number of characters
     chinese_chars=  re.findall(r'[\u4E00-\u9FFF]',sentence)
     sent_len = len(chinese_chars)
@@ -103,7 +97,6 @@ def sentence_final_particle(sentence):
     :param unprocssed  tweet
     :return normalized  number of sentence particles in the sentence
     """
-    #todo : proved
     particles = ['吧','呢','哦','啊','啦']
     sent_len = len(sentence)
     num = 0
@@ -158,7 +151,6 @@ def analyze_sentiment(sentence,p_s,ne_s):
     :param sentence, p_s, ne_s: unprocessed sentence,  postive sentiment list, ne_s negative sentiment list
     :return num : higher number, the more positive
     """
-    # probably vern slow since you will run on the two whole scripts...
     num = 0
     for word in p_s:
         if word in sentence:
