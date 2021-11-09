@@ -7,15 +7,31 @@ This aims to explore potential features of hate speech in Chinese (simplified, t
 3. Lexcal Features 
 4. Linguistics Features 
 
-For details of the features please see section [Feature Selection](#feature-selection)
+For details of the features please see section [Feature Extraction](#feature-extraction)
+
+I use Mutual Information and Logistic Regression to determine the relevance or the predictability or the features extracted. Results show that semantic familarity and profanity words are the most powerful features to predict hate speech. See [Feature Selection](#feature_selection) for details of the results.
 
 
 Please downlaod the Chinese w2v corpus in here: https://ai.tencent.com/ailab/nlp/en/embedding.html
-Please also feel free to use other smaller Chinese embedding corpora since loading this corpus takes quite a while.
-
+# Corpus 
+# Feature Extraction
 # Feature Selection
-# util.py 
-contains 5 functions which will be used in other files
+# Utility Files 
+1. util.py
+2. toy.tsv
+A toy dataset (which means that the data inlcuded is manufactured) created for the purpose of demonstration. Please contact me for the actual dataset.
+3. keyword.txt
+Contains the keywords used to scrap Tweets. Please note it is by no means an exhaustive list. 
+4. profane_words.txt
+Contains profane words in Mandarin and Cantonese that are used as one of the features.
+5. additional_words.txt
+Combine the profane words and the keywords in one single list, and formated particularly for the use of the Chinese processing library Jieba.
+6. NTUSD_negative_sentiment.txt, NTUSD_negative_sentiment.txt
+contain positive and negative sentiment words adopted from [National Taiwan University Semantic Dictionary](https://rdrr.io/rforge/tmcn/man/NTUSD.html).
+8. clustering.py
+Reads a tsv file and uses a pretrained w2v model to create 7 files of clusters using K-means Clustering. An elbow graph is created as well to pre determine the suitable number of clusters. 
+5.
+
 
 # toy.tsv
 modified tab seperated file with each line[0] as tweet, line[1] as the label
