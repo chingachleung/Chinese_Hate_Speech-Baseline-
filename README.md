@@ -64,7 +64,9 @@ reads the relevant cluster files <default to be cluster0,3,4 and 7> to combine a
 Example usage:
 `python3 create_combined_cluster_file.py --cluster_files cluster0.txt cluster3.txt cluster4.txt cluster7.txt`
 
+# Exciting News! 
 
+I have expanded the dataset into over 10000 Tweets. Currently working on modelling using unsupervised learning. Stay tuned for updates!
 
 
 
