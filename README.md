@@ -54,65 +54,16 @@ Contains profane words in Mandarin and Cantonese that are used as one of the fea
 5. additional_words.txt\
 Combine the profane words and the keywords in one single list, and formated particularly for the use of the Chinese processing library Jieba.
 6. NTUSD_negative_sentiment.txt, NTUSD_negative_sentiment.txt\
-contain positive and negative sentiment words adopted from [National Taiwan University Semantic Dictionary](https://rdrr.io/rforge/tmcn/man/NTUSD.html).
+Contain positive and negative sentiment words adopted from [National Taiwan University Semantic Dictionary](https://rdrr.io/rforge/tmcn/man/NTUSD.html).
 7. clustering.py\
-Reads a tsv file and uses a pretrained w2v model to create 7 files of clusters using K-means Clustering. An elbow graph is created as well to pre determine the suitable number of clusters. 
+Reads a tsv file and uses a pretrained w2v model to create 7 files of clusters using K-means Clustering. An elbow graph is created as well to pre determine the suitable number of clusters.\
 Example usage:
 `python3 clustering.py --tsv_file toy.tsv --w2v_file Tencent_AILab_ChineseEmbedding.txt`
 8. create_combined_cluster_file.py\
-reads the relevant cluster files <default to be cluster0,3,4 and 7> to combine all words from the files into one single file called combined_cluster.txt
+reads the relevant cluster files <default to be cluster0,3,4 and 7> to combine all words from the files into one single file called combined_cluster.txt\
 Example usage:
 `python3 create_combined_cluster_file.py --cluster_files cluster0.txt cluster3.txt cluster4.txt cluster7.txt`
 
-
-# toy.tsv
-modified tab seperated file with each line[0] as tweet, line[1] as the label
-
-# clusters_sample
-a folder that contains pre-produced cluster files 
-
-# clustering.py 
-reads a tsv file and uses a pretrained w2v model to create 7 files of cluster words. An elbow graph is created as well to pre determine the suitable number of clusters. 
-
-Example usage:
-`python3 clustering.py --tsv_file toy.tsv --w2v_file Tencent_AILab_ChineseEmbedding.txt`
-
-# create_combined_cluster_file.py
-reads the relevant cluster files <default to be cluster0,3,4 and 7> to combine all words from the files into one single file called combined_cluster.txt
-
-Example usage:
-If you have already run the clustering.py and created cluster files:
-`python3 create_combined_cluster_file.py --cluster_files cluster0.txt cluster3.txt cluster4.txt cluster7.txt`
-If you have not run the clustering.py, please use the pre-produced cluster files in the clusters_sample folder:
-`python3 create_combined_cluster_file.py --cluster_files clusters_sample/cluster0.txt clusters_sample/cluster3.txt clusters_sample/cluster4.txt clusters_sample/cluster7.txt`
-
-# feature_extraction.py
-reads a tsv file and a combined clustered file to create a csv file called toyset.csv for feature testing 
-
-Example usage: 
-If you have run the cluster.py and create_combined_cluster_file.py (which creates the combined_cluster.txt)
-`python3 feature_extraction.py --tsv_file toy.tsv --w2v_file Tencent_AILab_ChineseEmbedding.txt --clustered_word_file combined_cluster.txt` 
-
-if you have not run clustering.py and create_combined_cluster.py, please used the pre-produced files in the clusters_sample folder
-`Python3 feature_extraction.py --tsv_file toy.tsv --w2v_file Tencent_AILab_ChineseEmbedding.txt --clustered_word_file clusters_sample/combined_cluster.txt`
-
-# feature_testing.py
-reads a csv file created from feature_extraction.py to get the mutual information and logistic regression scores
-
-Example usage:
-`python3 feature_testing.py --csv_file toyset.csv`
-
-# keywords.txt
-a newline separated file for the hate group terms
-
-# profane_words.txt
-a newline separated file for the profane words
-
-# additional_words.txt
-a newline separated file for the additional words added to the Chinese processing library 
-
-# NTUSD_negative_sentiment.txt, NTUSD_negative_sentiment.txt
-newline separated files for sentiment words
 
 
 
