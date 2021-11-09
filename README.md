@@ -18,8 +18,8 @@ I used a keyword approach to scrap potentially hate speech Tweets in Simplified 
 # Feature Extraction
 
 The following features are extracted from each Tweet:
-1. Similarity
-In order to compare semantic similarity, I used the [Tencent Chinese W2V Corpus](https://ai.tencent.com/ailab/nlp/en/embedding.html) for embeddings.
+1. Similarity\
+To compare semantic similarity, I used the [Tencent Chinese W2V Corpus](https://ai.tencent.com/ailab/nlp/en/embedding.html) for embeddings.
 3. OOV counts
 4. Punctuations 
 5. Sentence length
@@ -33,26 +33,26 @@ In order to compare semantic similarity, I used the [Tencent Chinese W2V Corpus]
 feature_extraction.py reads a tsv file and a combined clustered file to create a csv file called toyset.csv for feature testing.
 
 Example usage: 
-You need to run the cluster.py and create_combined_cluster_file.py as part of pre-processing first.
+(You need to run the cluster.py and create_combined_cluster_file.py as part of pre-processing first.)
 `python3 feature_extraction.py --tsv_file toy.tsv --w2v_file Tencent_AILab_ChineseEmbedding.txt --clustered_word_file combined_cluster.txt` 
 
 # Feature Selection
 The similarity and the profanity features score the highest in Mutual Information. The logistic regression trained on all the features yield a precision score of 0.569, recall score of 0.135 and F1 score of 0.219.
 
-feature_testing.py reads a csv file created from feature_extraction.py to get the mutual information and logistic regression scores.
+feature_testing.py reads a csv file created from feature_extraction.py to get the mutual information and logistic regression scores.\
 Example usage:
 `python3 feature_testing.py --csv_file toyset.csv`
 
 # Utility Files 
 1. util.py
 2. toy.tsv\
-A toy dataset (which means that the data inlcuded is manufactured) created for the purpose of demonstration. Please contact me for the actual dataset.
+A toy dataset created for the purpose of demonstration. They are NOT real data.
 3. keyword.txt\
 Contains the keywords used to scrap Tweets. Please note it is by no means an exhaustive list. 
 4. profane_words.txt\
 Contains profane words in Mandarin and Cantonese that are used as one of the features.
 5. additional_words.txt\
-Combine the profane words and the keywords in one single list, and formated particularly for the use of the Chinese processing library Jieba.
+Combine the profane words and the keywords in one single list, and formated particularly for the use of the Chinese processing library [Jieba](https://pypi.org/project/jieba/).
 6. NTUSD_negative_sentiment.txt, NTUSD_negative_sentiment.txt\
 Contain positive and negative sentiment words adopted from [National Taiwan University Semantic Dictionary](https://rdrr.io/rforge/tmcn/man/NTUSD.html).
 7. clustering.py\
