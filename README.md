@@ -44,8 +44,9 @@ Example usage:
 `python3 feature_testing.py --csv_file toyset.csv`
 
 # Utility Files 
-1. util.py
-2. toy.tsv\
+1. util.py\
+Use Jieba and spaCy to pre-process Tweets.
+3. toy.tsv\
 A toy dataset created for the purpose of demonstration. They are NOT real data.
 3. keyword.txt\
 Contains the keywords used to scrap Tweets. Please note it is by no means an exhaustive list. 
