@@ -1,4 +1,4 @@
-# Chinese Hate Speech Feature Selection
+# Chinese Hate Speech Classification T
 
 This aims to explore potential features of hate speech in Chinese (simplified, traditional) and Cantonese that could be useful for future classification models. I scrapped relevant Tweets using a keyword approach as my dataset. A total of 10 features were extracted from the Tweets, and they fall into the following 4 categories: 
 
