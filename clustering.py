@@ -11,8 +11,8 @@ import argparse
 def get_frequent_words(hs_list, non_hs_list):
 
     """read two lists: a HS list with hateful tweets, and a non-H.S list with non hateful tweets
-    return a list of words from the hs tweets that have higher normalized frequency than in non-hs
-     threshold: minimum 5 occurences
+    return a list of words that are frequent in the HS list than in the non-HS list.
+    threshold: minimum 5 occurences
     """
 
     key_words = read_keywords()
@@ -41,10 +41,8 @@ def get_frequent_words(hs_list, non_hs_list):
     non_hs_counter = Counter(chain.from_iterable(segmented_processed_non_hs))
     print(f'printing the hs counter lengths: {len(hs_counter.keys())}')
 
-    #only keep words that occur at least 5 times for the real dataset, but it breaks the 200 data point sample;
-    #so value is set at 1 for demonstration purpose
-    threshold_hs_counter = Counter({k:v for k,v in hs_counter.items() if v >= 1})
-    threshold_non_hs_counter = Counter({k:v for k,v in non_hs_counter.items() if v >= 1})
+    threshold_hs_counter = Counter({k:v for k,v in hs_counter.items() if v >= 5})
+    threshold_non_hs_counter = Counter({k:v for k,v in non_hs_counter.items() if v >= 5})
     print(f'printing the hs counter threshold: {len(threshold_hs_counter.keys())}')
 
     hs_scale = 1
