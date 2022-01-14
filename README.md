@@ -1,28 +1,28 @@
 # Chinese Hate Speech Classification Task  (Baseline Model)
 
-This aims to explore potential features of hate speech in Chinese that could be useful for future classification tasks. The training dataset contains relevant Tweets I scrapped using a keyword approach. A total of 10 features were extracted from the Tweets, and they fall into the following 4 categories: 
+This task aims to explore potential features of hate speech in Chinese that could be useful for future more advanced classification tasks. The training dataset contains relevant Tweets I scrapped using a keyword approach. A total of 10 features were extracted from the Tweets, and they fall into the following 4 categories: 
 
 1. Semantic Features 
 2. Sentiments 
-3. Lexcal Features 
-4. Linguistics Features 
+3. Lexical Features 
+4. Linguistic Features 
 
-For details of the features please see section [Feature Extraction](#feature-extraction)
+For details of the features please see section [Feature Extraction](#feature-extraction).
 
 I used Mutual Information to determine which features are associated to hate speech, and used Logistic Regression to determine the predictability of the features extracted. See [Feature Selection](#feature-selection) for details of the results.
 
 
 # Data 
-I started with devlopeing a [hate speech lexcion](https://github.com/chingachleung/Chinese_Hate_seepch/blob/main/keywords.txt) based on multiple resources ([Hatebase.org](https://hatebase.org/), [Wiikpedia](https://zh.wikipedia.org/wiki/%E6%AD%A7%E8%A7%86%E8%AF%AD)) and retrieved Tweets using Twitter API that contain terms from the Lexicon.  The Tweets in the dataset are in Simplified Chinese, Traditional Chinese or Cantonese. For this baseline model, I collected over 6000 Tweets. Around 25% percent of the Tweets are classifified as hate-speech, and 75% classified as non hate-speech. To inqure about the data, please contact me at wl607@georgetown.edu
+I started with devlopeing a [hate speech lexcion](https://github.com/chingachleung/Chinese_Hate_seepch/blob/main/keywords.txt) based on multiple resources ([Hatebase.org](https://hatebase.org/), [Wiikpedia](https://zh.wikipedia.org/wiki/%E6%AD%A7%E8%A7%86%E8%AF%AD)) and retrieved Tweets using Twitter API that contain terms from the Lexicon. The Tweets in the dataset are in Simplified Chinese, Traditional Chinese or Cantonese. For this baseline model, I collected over 6000 Tweets. Around 25% percent of the Tweets are classifified as hate-speech, and 75% classified as non hate-speech. To inqure about the data, please contact me at wl607@georgetown.edu
 
 # Feature Extraction
 
 The following features are extracted from each Tweet:
-1. Similarity\
+1. Semantic similarity\
 To compare semantic similarity, I used the [Tencent Chinese W2V Corpus](https://ai.tencent.com/ailab/nlp/en/embedding.html) for embeddings.
 2. OOV counts
 3. Punctuations 
-4. Sentence length
+4. Sentence lengths
 5. Sentence final particles
 6. Profanity count
 7. Sentiment 
@@ -37,7 +37,7 @@ Example usage:
 `python3 feature_extraction.py --tsv_file toy.tsv --w2v_file Tencent_AILab_ChineseEmbedding.txt --clustered_word_file combined_cluster.txt` 
 
 # Feature Selection
-The similarity and the profanity features score the highest in Mutual Information. The logistic regression trained on all the features yield a precision score of 0.569, recall score of 0.135 and F1 score of 0.219.
+The similarity and the profanity features score the highest in Mutual Information. The logistic regression trained on all the features yields a precision score of 0.569, recall score of 0.456 and F1 score of 0.506.
 
 feature_testing.py reads a csv file created from feature_extraction.py to get the mutual information and logistic regression scores.\
 Example usage:
@@ -67,7 +67,7 @@ Example usage:
 
 # Exciting News! 
 
-I have expanded the dataset into over 10000 Tweets. Currently working on modelling using NN. Stay tuned for updates!
+I have expanded the dataset into over 10000 Tweets. Currently in preparation for a paper to be submitted to confereneces. Stay tuned for updates!
 
 
 
