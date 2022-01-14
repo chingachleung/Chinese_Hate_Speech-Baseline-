@@ -1,6 +1,6 @@
 # Chinese Hate Speech Classification Task
 
-This aims to explore potential features of hate speech in Chinese (simplified, traditional) and Cantonese that could be useful for future classification models. I scrapped relevant Tweets using a keyword approach as my dataset. A total of 10 features were extracted from the Tweets, and they fall into the following 4 categories: 
+This aims to explore potential features of hate speech in Chinese that could be useful for future classification tasks. The training dataset contains relevant Tweets I scrapped using a keyword approach. A total of 10 features were extracted from the Tweets, and they fall into the following 4 categories: 
 
 1. Semantic Features 
 2. Sentiments 
@@ -12,23 +12,23 @@ For details of the features please see section [Feature Extraction](#feature-ext
 I used Mutual Information to determine which features are associated to hate speech, and used Logistic Regression to determine the predictability of the features extracted. See [Feature Selection](#feature-selection) for details of the results.
 
 
-# Corpus 
-I used a keyword approach to scrap potentially hate speech Tweets in Simplified Chinese, Traditional Chinese or Cantonese. See [here](https://github.com/chingachleung/Chinese_Hate_seepch/blob/main/keywords.txt) for the list of keywords used. In total, I collected over 6000 Tweets. Around 25% percent of the Tweets are classifified as hate-speech, and 75% classified as non hate-speech. To inqure about the corpus, please contact me at wl607@georgetown.edu
+# Data 
+I started with devlopeing a [hate speech lexcion](https://github.com/chingachleung/Chinese_Hate_seepch/blob/main/keywords.txt) based on multiple resources ([Hatebase.org](https://hatebase.org/), [Wiikpedia](https://zh.wikipedia.org/wiki/%E6%AD%A7%E8%A7%86%E8%AF%AD)) and retrieved Tweets using Twitter API that contain terms from the Lexicon.  The Tweets in the dataset are in Simplified Chinese, Traditional Chinese or Cantonese. For this baseline model, I collected over 6000 Tweets. Around 25% percent of the Tweets are classifified as hate-speech, and 75% classified as non hate-speech. To inqure about the data, please contact me at wl607@georgetown.edu
 
 # Feature Extraction
 
 The following features are extracted from each Tweet:
 1. Similarity\
 To compare semantic similarity, I used the [Tencent Chinese W2V Corpus](https://ai.tencent.com/ailab/nlp/en/embedding.html) for embeddings.
-3. OOV counts
-4. Punctuations 
-5. Sentence length
-6. Sentence final particles
-7. Profanity count
-8. Sentiment 
-9. Othering language
-10. Assertiveness
-11. Profanity proximity
+2. OOV counts
+3. Punctuations 
+4. Sentence length
+5. Sentence final particles
+6. Profanity count
+7. Sentiment 
+8. Othering language
+9. Assertiveness
+10. Profanity proximity
  
 feature_extraction.py reads a tsv file and a combined clustered file to create a csv file called toyset.csv for feature testing.
 
@@ -67,7 +67,7 @@ Example usage:
 
 # Exciting News! 
 
-I have expanded the dataset into over 10000 Tweets. Currently working on modelling using unsupervised learning. Stay tuned for updates!
+I have expanded the dataset into over 10000 Tweets. Currently working on modelling using NN. Stay tuned for updates!
 
 
 
