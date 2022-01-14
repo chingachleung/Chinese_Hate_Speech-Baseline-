@@ -45,7 +45,7 @@ Example usage:
 
 # Utility Files 
 1. util.py\
-Use Jieba and spaCy to pre-process Tweets.
+Uses Jieba and spaCy to pre-process Tweets.
 3. toy.tsv\
 A toy dataset created for the purpose of demonstration. They are NOT real data.
 3. keyword.txt\
@@ -53,7 +53,7 @@ Contains the keywords used to scrap Tweets. Please note it is by no means an exh
 4. profane_words.txt\
 Contains profane words in Mandarin and Cantonese that are used as one of the features.
 5. additional_words.txt\
-Combine the profane words and the keywords in one single list, and formated particularly for the use of the Chinese processing library [Jieba](https://pypi.org/project/jieba/).
+Combines the profane words and the keywords in one single list, and formated particularly for the use of the Chinese processing library [Jieba](https://pypi.org/project/jieba/).
 6. NTUSD_negative_sentiment.txt, NTUSD_negative_sentiment.txt\
 Contain positive and negative sentiment words adopted from [National Taiwan University Semantic Dictionary](https://rdrr.io/rforge/tmcn/man/NTUSD.html).
 7. clustering.py\
@@ -61,7 +61,7 @@ Reads a tsv file and uses a pretrained w2v model to create 7 files of clusters u
 Example usage:
 `python3 clustering.py --tsv_file toy.tsv --w2v_file Tencent_AILab_ChineseEmbedding.txt`
 8. create_combined_cluster_file.py\
-reads the relevant cluster files <default to be cluster0,3,4 and 7> to combine all words from the files into one single file called combined_cluster.txt\
+Reads the relevant cluster files <default to be cluster0,3,4 and 7> to combine all words from the files into one single file called combined_cluster.txt\
 Example usage:
 `python3 create_combined_cluster_file.py --cluster_files cluster0.txt cluster3.txt cluster4.txt cluster7.txt`
 
