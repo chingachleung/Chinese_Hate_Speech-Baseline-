@@ -1,4 +1,4 @@
-# Chinese Hate Speech Classification Task
+# Chinese Hate Speech Classification Task  (Baseline Model)
 
 This aims to explore potential features of hate speech in Chinese that could be useful for future classification tasks. The training dataset contains relevant Tweets I scrapped using a keyword approach. A total of 10 features were extracted from the Tweets, and they fall into the following 4 categories: 
 
