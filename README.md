@@ -9,7 +9,7 @@ This task aims to explore potential features of hate speech in Chinese that coul
 
 For details of the features please see section [Feature Extraction](#feature-extraction).
 
-I used Mutual Information to determine which features are associated to hate speech, and used Logistic Regression to determine the predictability of the features extracted. See [Feature Selection](#feature-selection) for details of the results.
+I used Mutual Information to determine which features are associated to hate speech, and used Logistic Regression to determine the predictability of the features extracted. See [Feature Selection](#feature-selection) for the results.
 
 
 # Data 
