@@ -7,7 +7,7 @@ This task aims to explore potential features of hate speech in Chinese that coul
 3. Lexical Features 
 4. Linguistic Features 
 
-For details of the features please see section [Feature Extraction](#feature-extraction).
+For details of the features, please see section [Feature Extraction](#feature-extraction).
 
 I used Mutual Information to determine which features are associated to hate speech, and used Logistic Regression to determine the predictability of the features extracted. See [Feature Selection](#feature-selection) for the results.
 
