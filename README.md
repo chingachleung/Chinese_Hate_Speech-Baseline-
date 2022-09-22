@@ -13,7 +13,7 @@ I used Mutual Information to determine which features are associated to hate spe
 
 
 # Data 
-I started with devlopeing a [hate speech lexcion](https://github.com/chingachleung/Chinese_Hate_seepch/blob/main/keywords.txt) based on multiple resources ([Hatebase.org](https://hatebase.org/), [Wiikpedia](https://zh.wikipedia.org/wiki/%E6%AD%A7%E8%A7%86%E8%AF%AD)) and retrieved Tweets using Twitter API that contain terms from the Lexicon. The Tweets in the dataset are in Simplified Chinese, Traditional Chinese or Cantonese. For this baseline model, I collected over 6000 Tweets. Around 25% percent of the Tweets are classifified as hate-speech, and 75% classified as non hate-speech. To inqure about the data, please contact me at wl607@georgetown.edu
+I started with devlopeing a [hate speech lexcion](https://github.com/chingachleung/Chinese_Hate_seepch/blob/main/keywords.txt) based on multiple resources ([Hatebase.org](https://hatebase.org/), [Wiikpedia](https://zh.wikipedia.org/wiki/%E6%AD%A7%E8%A7%86%E8%AF%AD)) and retrieved Tweets using Twitter API that contain terms from the Lexicon. The Tweets in the dataset are in Simplified Chinese, Traditional Chinese or Cantonese. For this baseline model, I collected over 10,000 Tweets. Around 25% percent of the Tweets are classifified as hate-speech, and 40% classified as non hate-speech and 35% as abusive language. To inqure about the data, please contact me at wl607@georgetown.edu
 
 # Feature Extraction
 
@@ -65,9 +65,10 @@ Reads the relevant cluster files <default to be cluster0,3,4 and 7> to combine a
 Example usage:
 `python3 create_combined_cluster_file.py --cluster_files cluster0.txt cluster3.txt cluster4.txt cluster7.txt`
 
-# Exciting News! 
 
-I have expanded the dataset into over 10000 Tweets. Currently in preparation for a paper to be submitted to confereneces. Stay tuned for updates!
+# Current Status 
+
+Let's see how neural network models do on the same dataset... 
 
 
 
