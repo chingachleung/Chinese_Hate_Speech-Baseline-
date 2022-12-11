@@ -1,6 +1,6 @@
-# Chinese Hate Speech Classification Task  (Baseline Model)
+# Chinese Hate Speech Classification Task  (Baseline Model using statistical ML algorithms)
 
-This task aims to explore potential features of hate speech in Chinese that could be useful for future more advanced classification tasks. The training dataset contains relevant Tweets I scrapped using a keyword approach. A total of 10 features were extracted from the Tweets, and they fall into the following 4 categories: 
+This task aims to explore potential features of hate speech in Chinese that could be useful for future more advanced classification using deep learning. The training dataset contains relevant Tweets scrapped using a keyword approach. A total of 10 features were extracted from the Tweets, and they fall into the following 4 categories: 
 
 1. Semantic Features 
 2. Sentiments 
@@ -66,10 +66,9 @@ Example usage:
 `python3 create_combined_cluster_file.py --cluster_files cluster0.txt cluster3.txt cluster4.txt cluster7.txt`
 
 
-# Current Status 
+# Currently Brewing:
 
-Let's see how neural network models do on the same dataset... 
-
+Fine-tuning [Chinese BERT](https://huggingface.co/bert-base-chinese) to build a NN model. See code in [here](https://github.com/chingachleung/ChineseHateSpeechClassification). 
 
 
 
